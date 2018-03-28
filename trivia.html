@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Totally Trivia</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap-grid.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.css">
+</head>
+<style>
+     body {
+        background-image: url("assets/images/80s-background.jpg");
+        height: 100%;
+        width: 100%;
+     }
+     h1 {
+    color: blue;
+    font-family: monospace;
+    font-size: 55px;
+    margin-bottom: 10%;
+    font-weight:bolder;
+    margin-left: 2%;
+}
+hr {
+    visibility: hidden;
+}
+
+.answers {
+    margin-left:20%
+}
+     #contents-container {
+    background-color: yellow;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 450px;
+}
+#timer-display {
+    font-family: monospace;
+    margin-left: 30%;
+    font-size: 20px;
+    
+}
+
+#question-section {
+    margin-left: 20%
+}
+#answerA {
+    margin-left: 20%
+}
+#answerB {
+    margin-left: 20%
+}
+#answerC {
+    margin-left: 20%
+}
+#answerD {
+    margin-left: 20%
+}
+#submit-button {
+    margin-left: 33%;
+}
+</style>
+
+<body>
+<section id="contents-container">
+    
+    <div class="row" id="title-row">
+        <h1>TOTALLY TRIVIAL TRIVIA!</h1>
+    </div>
+
+    <div class="row" id="timer-display">
+        Time Remaining: <span>60</span>  Seconds
+    </div>
+
+    <hr>
+
+    <div class="row" id="question-section">
+        PLACEHOLDER QUESTION
+
+    </div>
+
+    <hr>
+
+    
+        
+        <div class="row"id="answerA" onclick="clickedA()">PLACEHOLDER ANSWER</div>
+        <div class="row"id="answerB" onclick="clickedB()">PLACEHOLDER ANSWER</div>
+        <div class="row"id="answerC" onclick="clickedC()">PLACEHOLDER ANSWER</div>
+        <div class="row"id="answerD" onclick="clickedD()">PLACEHOLDER ANSWER</div>
+     
+    <div class="row">
+        <button id="submit-button" onclick="submitFunction()"class="btn-primary">SUBMIT</button>
+    </div>   
+        
+    
+
+
+</section>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+var clickedVar = ""
+var correctCount = 0
+
+
+function clickedA() {
+    clickedVar = "a"
+    console.log(clickedVar)
+}
+function clickedB() {
+    clickedVar = "b"
+    console.log(clickedVar)
+}
+function clickedC() {
+    clickedVar = "c"
+    console.log(clickedVar)
+}
+function clickedD() {
+    clickedVar = "d"
+    console.log(clickedVar)
+}
+
+function submitFunction() {
+    if(clickedVar === "a") {
+    correctCount++
+    alert("correct") }
+    
+    if(clickedVar !== "a") {
+        alert("wrong!")
+    }
+}
+    
+
+
+
+//first question
+document.getElementById("question-section").innerText = "First Question"
+document.getElementById("answerA").innerText = "Answer A"
+document.getElementById("answerB").innerText = "Answer B"
+document.getElementById("answerC").innerText = "Answer C"
+document.getElementById("answerD").innerText = "Answer D"
+
+
+
+    </script>
+</body>
+</html>

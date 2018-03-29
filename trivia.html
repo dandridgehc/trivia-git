@@ -61,6 +61,7 @@ hr {
 #submit-button {
     margin-left: 33%;
 }
+
 </style>
 
 <body>
@@ -71,13 +72,13 @@ hr {
     </div>
     <button id="start-button">START TIMER</button>
     <div class="row" id="timer-display">
-        Time Remaining:  <span id="seconds-display">00</span>  Seconds
+        Time Remaining:  <span id="seconds-display">60</span>  Seconds
     </div>
 
     <hr>
 
     <div class="row" id="question-section">
-        PLACEHOLDER QUESTION
+       
 
     </div>
 
@@ -85,10 +86,10 @@ hr {
 
     
         
-        <div class="row"id="answerA" onclick="clickedA()">PLACEHOLDER ANSWER</div>
-        <div class="row"id="answerB" onclick="clickedB()">PLACEHOLDER ANSWER</div>
-        <div class="row"id="answerC" onclick="clickedC()">PLACEHOLDER ANSWER</div>
-        <div class="row"id="answerD" onclick="clickedD()">PLACEHOLDER ANSWER</div>
+        <div class="row"id="answerA"> </div>
+        <div class="row"id="answerB"> </div>
+        <div class="row"id="answerC"> </div>
+        <div class="row"id="answerD"> </div>
      
     <div class="row">
         <button id="submit-button" onclick="submitFunction()"class="btn-primary">SUBMIT</button>
@@ -104,6 +105,7 @@ hr {
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
 
+
 $("#start-button").click(gameStarted)
 
 function gameStarted() {
@@ -113,6 +115,11 @@ function gameStarted() {
 var clickedVar = ""
 var correctCount = 0
 
+
+$("#answerA").click(clickedA)
+$("#answerB").click(clickedB)
+$("#answerB").click(clickedC)
+$("#answerD").click(clickedD)
 
 function clickedA() {
     clickedVar = "a"
@@ -141,12 +148,17 @@ function submitFunction() {
     }
 }
 
-timerCounter = 0
+timerCounter = 5
 var x = setInterval(function() { 
-    timerCounter++;
+    timerCounter = timerCounter - 1;
     $("#seconds-display").text(timerCounter)
 
 
+if(timerCounter===0) {
+    alert("Time's Up! Let's see your results!")
+    $("#seconds-display").text("00")
+  
+}
 }, 1000);
 
 

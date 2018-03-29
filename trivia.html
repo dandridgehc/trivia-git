@@ -69,9 +69,9 @@ hr {
     <div class="row" id="title-row">
         <h1>TOTALLY TRIVIAL TRIVIA!</h1>
     </div>
-
+    <button id="start-button">START TIMER</button>
     <div class="row" id="timer-display">
-        Time Remaining: <span>60</span>  Seconds
+        Time Remaining:  <span id="seconds-display">00</span>  Seconds
     </div>
 
     <hr>
@@ -104,6 +104,12 @@ hr {
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
 
+$("#start-button").click(gameStarted)
+
+function gameStarted() {
+
+
+
 var clickedVar = ""
 var correctCount = 0
 
@@ -134,8 +140,14 @@ function submitFunction() {
         alert("wrong!")
     }
 }
-    
 
+timerCounter = 0
+var x = setInterval(function() { 
+    timerCounter++;
+    $("#seconds-display").text(timerCounter)
+
+
+}, 1000);
 
 
 //first question
@@ -144,6 +156,21 @@ document.getElementById("answerA").innerText = "Answer A"
 document.getElementById("answerB").innerText = "Answer B"
 document.getElementById("answerC").innerText = "Answer C"
 document.getElementById("answerD").innerText = "Answer D"
+
+
+
+//<div id="display">00:00</div>
+
+//
+//     intervalId = setInterval(stopwatch.count, 1000);
+//       clockRunning = true;
+//   
+//   
+    
+
+}
+
+
 
 
 
